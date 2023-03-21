@@ -284,8 +284,8 @@ file_type = r'\*xlsx'
 
 files = glob.glob(folder_path + file_type)
 traseiro = max(files, key=os.path.getctime) # colocando na variável o arquivo do traseiro
-dianteiro = sorted(files, key=os.path.getctime)
-dianteiro = dianteiro[-2] # colocando na variável o arquivo do dianteiro
+dianteiro = sorted(files, key=os.path.getctime) # ordena os arquivos baixados de acordo com a data e hora que foi baixado
+dianteiro = dianteiro[-2] # colocando na variável o arquivo do dianteiro; pega o 2º arquivo, pois o 1º foi o do traseiro
 
 df = analyzes_traseiro(traseiro)
 send_email_traseiro(df)
